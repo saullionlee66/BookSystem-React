@@ -7,10 +7,10 @@ function Home() {
             <h1>Saul's Book System</h1>
             
             <p>This project contains two parts:
-                <ol>
+                <ul>
                     <li>Classic CRUD Demonstration</li>
                     <li>Industrial Standard Registration/Authentication Practice</li>
-                </ol>
+                </ul>
             </p>
             <img src={CRUD} alt="CRUD" />
             <span> + </span>
@@ -22,11 +22,12 @@ function Home() {
             <p>It is built on full MERN tech
                 stack, namely, MongoDB, Express, React and Node.JS. </p>
             <br />
-            <p>The SignUp/Login part uses Firebase Authentication, including SignUp, Login with email/password,
+            <p>The Registration/Authentication part uses Firebase Authentication, including SignUp, Login with email/password,
                 and Google Auth0 API. 
             </p>
-            <p>It also allow the user to update their password in the dashboard and 
-                reset the password if password has been forgotten. Also private routes have been setup for dashboard
+            <p>It also allows the user to update their password in the dashboard and 
+                reset the password if password has been forgotten.</p>
+                <p>Also private routes have been setup for dashboard
                 and update profile components. Login is needed for accessing these private routes.</p>
             <p>Used tech includes, but not limited to, MERN, axios, react-router-dom, material-ui, react-bootstrap,
                 firebase, google auth0, react-cookies, etc.

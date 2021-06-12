@@ -111,6 +111,10 @@
   font-size: 1.3rem;
 }
 
+.home-wrapper li {
+  list-style-type: none;
+}
+
 .home-wrapper img {
   width: 400px;
   height: auto;
