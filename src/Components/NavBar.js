@@ -17,9 +17,9 @@ function NavBar() {
     return (
       <div className="nav">
         <Navbar bg="dark" variant="dark" className="navbar">
-          <Navbar.Brand href="/"><ImportContactsRoundedIcon /> Saul's Book System</Navbar.Brand>
+          <Navbar.Brand href="/BookSystem-React"><ImportContactsRoundedIcon /> Saul's Book System</Navbar.Brand>
           <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/BookSystem-React">Home</Nav.Link>
             <Nav.Link href="/add">Add</Nav.Link>
             <Nav.Link href="/update">Update</Nav.Link>
             <Nav.Link href="/delete">Delete</Nav.Link>
