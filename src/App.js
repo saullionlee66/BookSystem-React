@@ -24,6 +24,7 @@ function App() {
               <div className="App">
                 <Switch>
                   <Route exact path="/" component={Home} />
+                  <Route path="/BookSystem-React" component={Home} />
                   <Route path="/add" component={AddBook} />
                   <Route path="/update" component={UpdateBook} />
                   <Route path="/delete" component={DeleteBook} />
