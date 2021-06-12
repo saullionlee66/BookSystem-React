@@ -1,12 +1,11 @@
-import React, {useContext,useState} from 'react';
-import {BookContext} from './BookContext';
-import axios from 'axios'
+import React, {useState} from 'react';
+import Axios from 'axios'
 import {Form, Button} from 'react-bootstrap'
-
+import {API} from '../Helpers/API'
+import Books from './Books'
 const AddBook = () =>{
     const [name, setName] = useState("");
     const [price, setPrice] = useState();
-    const [books, setBooks] = useContext(BookContext);
     const [ID, setID] = useState();
     const updateName = (e) =>{
         setName(e.target.value);
@@ -23,14 +22,7 @@ const AddBook = () =>{
     }
 
      const addBook = (e) => {
-        e.preventDefault();
-        setBooks((prevBooks)=> [...prevBooks,
-        {
-            name,
-            price,
-            id:ID
-        }])
-        axios.post("http://localhost:5000/data",{
+        Axios.post(`${API.api}/addbook`,{
             name,
             id:ID,
             price
@@ -42,29 +34,33 @@ const AddBook = () =>{
         setName("");
     }
     return(
-        <Form onSubmit={addBook}>
-            <Form.Group controlId="formBasicName">
-                <Form.Label style={{fontSize: 24}} >Book ID</Form.Label>
-                <Form.Control size="lg" onChange={updateID} name="ID"
-                type="text" placeholder="Enter book ID" value={ID} />
-            </Form.Group>
-            <Form.Group controlId="formBasicName">
-                <Form.Label style={{fontSize: 24}}>Book Name</Form.Label>
-                <Form.Control size="lg" onChange={updateName} name="name"
-                type="text" placeholder="Enter book name" value={name} />
-            </Form.Group>
+        <div className="addBook-wrapper">
+            <Form onSubmit={addBook}>
+                <Form.Group controlId="formBasicName">
+                    <Form.Label style={{fontSize: 24}} >Book ID</Form.Label>
+                    <Form.Control size="lg" onChange={updateID} name="ID"
+                    type="text" placeholder="Enter Book ID" value={ID} required />
+                </Form.Group>
+                <Form.Group controlId="formBasicName">
+                    <Form.Label style={{fontSize: 24}}>Book Name</Form.Label>
+                    <Form.Control size="lg" onChange={updateName} name="name"
+                    type="text" placeholder="Enter Book name" value={name} required />
+                </Form.Group>
 
-            <Form.Group controlId="formBasicPrice">
-                <Form.Label style={{fontSize: 24}}>Price</Form.Label>
-                <Form.Control size="lg" onChange={updatePrice} name="price"
-                type="text" placeholder="Enter book price" value={price} />
-            </Form.Group>
+                <Form.Group controlId="formBasicPrice">
+                    <Form.Label style={{fontSize: 24}}>Price</Form.Label>
+                    <Form.Control size="lg" onChange={updatePrice} name="price"
+                    type="number" min="0" step="0.01"
+                     placeholder="Enter Book price" value={price} required />
+                </Form.Group>
 
-            <Button variant="primary" type="submit">
-                Add Book
-            </Button>
-        </Form>
+                <Button variant="primary" type="submit" >
+                    Add Book
+                </Button>
+            </Form>
 
+            <Books />
+        </div>
     )
 }
 

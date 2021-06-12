@@ -1,14 +1,32 @@
 import React, {useContext} from 'react'
 import {BookContext} from './BookContext'
-import Book from './Book'
+import {Table} from 'react-bootstrap'
 
 function Books() {
-    const [books, setBooks] = useContext(BookContext);
+
+    const {books} = useContext(BookContext);
+
     return (
         <div className="books">
-            {books.map( (book) => (
-                 <Book key={book.id} name={book.name} id={book.id} price={book.price} />
-            ))}
+            <Table striped bordered hover className="book-table" >
+                <thead>
+                    <tr>
+                    <th>ID</th>
+                    <th>Book Name</th>
+                    <th>Price</th>
+
+                    </tr>
+                </thead> 
+                <tbody>
+                    {books.map((book, key) => (
+                        <tr key={key}>
+                            <td>{book.id}</td>
+                            <td>{book.name} </td>
+                            <td>{book.price} </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </Table>
         </div>
     )
 }

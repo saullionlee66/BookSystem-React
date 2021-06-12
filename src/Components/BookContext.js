@@ -1,25 +1,27 @@
 import React,{useState,useEffect,createContext}from 'react'
 import axois from 'axios'
-
+import {API} from '../Helpers/API'
 export const BookContext = createContext();
 
 export function BookProvider(props) {
 
     const [books, setBooks] = useState([]);
-        useEffect(()=>{
-            axois.get("http://localhost:5000/").
-            then(res =>{
+
+        useEffect(() => {
+            axois.get(API.api)
+            .then(res =>{
                 const data = res.data;
-                setBooks(data);
-                books.map(book=>{console.log(book)})
+                return setBooks(data);
             }).catch(err =>{
                 console.log(err);
             })
-        },[setBooks])
+        },[])
+        
+    const value = {books, setBooks}
     return (
         
 
-        <BookContext.Provider value={[books, setBooks]}>
+        <BookContext.Provider value={value}>
             {props.children}
         </BookContext.Provider>
     )
