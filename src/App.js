@@ -24,13 +24,13 @@ function App() {
               <div className="App">
                 <Switch>
                   <Route path="/BookSystem-React/add" component={AddBook} />
-                  {/* <Route path="/update" component={UpdateBook} />
+                  <Route path="/update" component={UpdateBook} />
                   <Route path="/delete" component={DeleteBook} />
                   <Route path="/login" component={Login} />
                   <Route path="/signup" component={Signup} />
                   <Route path='/forgot-password' component={ForgetPassword} />
                   <PrivateRoute path="/dashboard" component={Dashboard} />
-                  <PrivateRoute path="/update-profile" component={UpdateProfile} /> */}
+                  <PrivateRoute path="/update-profile" component={UpdateProfile} />
                   <Route path="/BookSystem-React" component={Home} />
                 </Switch>
               </div>
