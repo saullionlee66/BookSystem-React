@@ -23,7 +23,7 @@ function App() {
             <NavBar />
               <div className="App">
                 <Switch>
-                  <Route exact path="/BookSystem-React/" component={Home} />
+                  <Route exact path="/BookSystem-React" component={Home} />
                   <Route exact path="/BookSystem-React/add" component={AddBook} />
                   <Route path="/update" component={UpdateBook} />
                   <Route path="/delete" component={DeleteBook} />
