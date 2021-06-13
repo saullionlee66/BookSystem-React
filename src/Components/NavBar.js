@@ -3,7 +3,7 @@ import {Navbar, Nav} from 'react-bootstrap'
 import {useAuth} from '../Context/Auth'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import {useCookies} from 'react-cookie'
-import {useHistory} from 'react-router-dom'
+import {useHistory, Link} from 'react-router-dom'
 import ImportContactsRoundedIcon from '@material-ui/icons/ImportContactsRounded';
 function NavBar() {
   const history = useHistory();
@@ -17,10 +17,10 @@ function NavBar() {
     return (
       <div className="nav">
         <Navbar bg="dark" variant="dark" className="navbar">
-          <Navbar.Brand href="/BookSystem-React"><ImportContactsRoundedIcon /> Saul's Book System</Navbar.Brand>
+          <Navbar.Brand href="/"><ImportContactsRoundedIcon /> Saul's Book System</Navbar.Brand>
           <Nav className="mr-auto">
-            <Nav.Link href="/BookSystem-React">Home</Nav.Link>
-            <Nav.Link href="/BookSystem-React/add">Add</Nav.Link>
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link as={Link} to='/add'>Add</Nav.Link>
             <Nav.Link href="/update">Update</Nav.Link>
             <Nav.Link href="/delete">Delete</Nav.Link>
           </Nav>

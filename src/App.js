@@ -5,7 +5,7 @@ import NavBar from './Components/NavBar'
 import Home from './Components/Home'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UpdateBook from './Components/UpdateBook'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {HashRouter as Router, Route, Switch} from 'react-router-dom'
 import DeleteBook from './Components/DeleteBook'
 import {AuthProvider} from './Context/Auth'
 import Login from './Components/Login'
@@ -23,7 +23,8 @@ function App() {
             <NavBar />
               <div className="App">
                 <Switch>
-                  <Route path="/BookSystem-React/add" component={AddBook} />
+                  <Route path="/" exact component={Home} />
+                  <Route path="/add" component={AddBook} />
                   <Route path="/update" component={UpdateBook} />
                   <Route path="/delete" component={DeleteBook} />
                   <Route path="/login" component={Login} />
@@ -31,7 +32,6 @@ function App() {
                   <Route path='/forgot-password' component={ForgetPassword} />
                   <PrivateRoute path="/dashboard" component={Dashboard} />
                   <PrivateRoute path="/update-profile" component={UpdateProfile} />
-                  <Route path="/BookSystem-React" component={Home} />
                 </Switch>
               </div>
           </BookProvider>
