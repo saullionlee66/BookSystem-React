@@ -20,7 +20,7 @@ function NavBar() {
           <Navbar.Brand href="/BookSystem-React"><ImportContactsRoundedIcon /> Saul's Book System</Navbar.Brand>
           <Nav className="mr-auto">
             <Nav.Link href="/BookSystem-React">Home</Nav.Link>
-            <Nav.Link href="/add">Add</Nav.Link>
+            <Nav.Link href="/BookSystem-React/add">Add</Nav.Link>
             <Nav.Link href="/update">Update</Nav.Link>
             <Nav.Link href="/delete">Delete</Nav.Link>
           </Nav>

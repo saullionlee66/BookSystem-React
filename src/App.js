@@ -23,9 +23,8 @@ function App() {
             <NavBar />
               <div className="App">
                 <Switch>
-                  <Route exact path="/" component={Home} />
                   <Route path="/BookSystem-React" component={Home} />
-                  <Route path="/add" component={AddBook} />
+                  <Route path="/BookSystem-React/add" component={AddBook} />
                   <Route path="/update" component={UpdateBook} />
                   <Route path="/delete" component={DeleteBook} />
                   <Route path="/login" component={Login} />
