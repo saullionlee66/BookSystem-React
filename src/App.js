@@ -23,7 +23,6 @@ function App() {
             <NavBar />
               <div className="App">
                 <Switch>
-                  <Route path="/BookSystem-React" exact component={Home} />
                   <Route path="/BookSystem-React/add" component={AddBook} />
                   <Route path="/update" component={UpdateBook} />
                   <Route path="/delete" component={DeleteBook} />
@@ -32,6 +31,7 @@ function App() {
                   <Route path='/forgot-password' component={ForgetPassword} />
                   <PrivateRoute path="/dashboard" component={Dashboard} />
                   <PrivateRoute path="/update-profile" component={UpdateProfile} />
+                  <Route path="/BookSystem-React" exact component={Home} />
                 </Switch>
               </div>
           </BookProvider>
